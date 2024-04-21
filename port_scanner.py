@@ -12,3 +12,9 @@ def port_scanner(port):
         print("The port is closed")
     else:
         print("The port is open")
+
+# Scan the first 1024 ports
+for port in range(0, 1025):
+    print(port)
+    port_scanner(port)
+    
