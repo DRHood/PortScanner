@@ -17,4 +17,5 @@ def port_scanner(port):
 for port in range(0, 1025):
     print(port)
     port_scanner(port)
-    
+
+port_scanner(port)
