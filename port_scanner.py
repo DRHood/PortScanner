@@ -1,22 +1,23 @@
 import socket
 import threading
 
+#User input for target Ip address
 target = input("Enter target IP address to scan: ")
-port = 80
-# Create a socket object
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# Set a timeout
-s.settimeout(5)
 
 def port_scanner(port):
-    if s.connect_ex((target, port)):
-        print("The port is closed")
-    else:
-        print("The port is open")
+    Try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(5)
+        con = s.connect((target, port))
+        print(f'The port {port} is open')
+        con.close()
+    except:
+        pass
 
-# Scan the first 1024 ports
+
+# Scanning ports using threading for speed
 for port in range(0, 1025):
-    print(port)
-    port_scanner(port)
+    thread = threading.Thread(target = port_scanner, args = (port, ))
+    thread.start()
 
 port_scanner(port)
