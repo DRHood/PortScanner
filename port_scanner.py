@@ -1,7 +1,7 @@
 import socket
 import threading
 
-target = "localhost"
+target = input("Enter target IP address to scan: ")
 port = 80
 # Create a socket object
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
