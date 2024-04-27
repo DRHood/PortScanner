@@ -4,6 +4,6 @@ The purpose of this project is to develop a port scanner with precise targeting,
 ## Currently available Options:
 - Ip address targeting
 - Port number targeting
-- Port range scanning 0 - 65535
+- Port range scanning: 0 - 65535
 
 ![example of current commands](BasicTargetedPortScan.png)
