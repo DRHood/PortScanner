@@ -4,7 +4,7 @@ import threading
 # User input for target Ip address
 target = input("Enter target IP address to scan: ")
 variable:print("Enter range of ports to scan (format: start - end):")
-start_port, end_port = map(int, input().split('-'))
+start_port, end_port = map(int, input().split(' - '))
 
 def port_scanner(port):
     try:   
