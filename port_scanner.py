@@ -3,6 +3,8 @@ import threading
 
 # User input for target Ip address
 target = input("Enter target IP address to scan: ")
+variable:print("Enter range of ports to scan (format: start - end):")
+start_port, end_port = map(int, input().split('-'))
 
 def port_scanner(port):
     try:   
@@ -15,6 +17,6 @@ def port_scanner(port):
         pass
 
 # Scanning ports using threading for speed
-for port in range(0, 1025):
-    thread = threading.Thread(target = port_scanner, args = (port, ))
+for port in range(start_port, end_port+1):
+    thread = threading.Thread(target = port_scanner, args = (port,))
     thread.start()
